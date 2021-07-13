@@ -32,10 +32,10 @@ router.delete('/delete-client/:clientId', async (req, res, _next) => {
 	}
 })
 
-router.put('/update-client', async (req, res, _next) => {
+router.put('/update-client/:clientId', async (req, res, _next) => {
 	try {
 		const payload = [
-			req.body.clientId,
+			req.params.clientId,
 			req.body.firstName,
 			req.body.firstLastName,
 			req.body.secondLastName,
