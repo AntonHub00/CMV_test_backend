@@ -11,14 +11,15 @@ const pool = mysql.createPool({
 
 const cmvDB = {}
 
-cmvDB.getClients = () => {
-	return new Promise((resolve, reject) => {
-		pool.query('CALL USPGetClients()', (error, result) => {
-			if (error) return reject(error)
-
-			return resolve(result)
-		})
-	})
+const executeQuery = (queryString, valuesArray = []) => {
+		return new Promise((resolve, reject) => pool.query(
+			queryString,
+			valuesArray,
+			(error, result) => error ? reject(error) : resolve(result)
+		)
+	)
 }
+
+cmvDB.getClients = () => executeQuery('CALL USPGetClients()')
 
 module.exports = cmvDB
