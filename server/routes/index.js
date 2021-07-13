@@ -22,4 +22,14 @@ router.get('/get-client-accounts/:clientId', async (req, res, _next) => {
 	}
 })
 
+router.delete('/delete-client/:clientId', async (req, res, _next) => {
+	try {
+		const result = await db.deleteClient([req.params.clientId])
+		res.json(result[0])
+	} catch (error) {
+		console.log(error);
+		res.sendStatus(500)
+	}
+})
+
 module.exports = router
