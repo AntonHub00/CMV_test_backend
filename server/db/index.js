@@ -22,4 +22,6 @@ const executeQuery = (queryString, valuesArray = []) => {
 
 cmvDB.getClients = () => executeQuery('CALL USPGetClients()')
 
+cmvDB.getClientAccounts = (valuesArray) => executeQuery('CALL USPGetClientAccounts(?)', valuesArray)
+
 module.exports = cmvDB
