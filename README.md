@@ -3,6 +3,7 @@
 ## Requirements
 
 MySQL version: 8.0.25.
+Node.js: version 14.17.3.
 
 ## Setup
 

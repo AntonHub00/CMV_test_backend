@@ -1,0 +1,26 @@
+{
+  "name": "cmv_test_backend",
+  "version": "1.0.0",
+  "description": "A project to test my skills",
+  "main": "server/server.js",
+  "scripts": {
+    "dev": "nodemon server/server.js -w server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AntonHub00/CMV_test_backend-.git"
+  },
+  "author": "Antonio Ochoa",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AntonHub00/CMV_test_backend-/issues"
+  },
+  "homepage": "https://github.com/AntonHub00/CMV_test_backend-#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mysql": "^2.18.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.12"
+  }
+}
