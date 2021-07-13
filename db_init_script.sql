@@ -81,7 +81,16 @@ DELIMITER ;
 DELIMITER $$
 CREATE PROCEDURE USPGetClientAccounts(IN param_client_id INT)
 BEGIN
-	SELECT * FROM Account WHERE client_id = param_client_id;
+	SELECT
+		account.id,
+		account_type.name,
+		account.current_balance,
+		account.created_at,
+		account.last_transaction
+	FROM Client client
+	INNER JOIN Account account ON account.client_id = client.id
+	INNER JOIN AccountType account_type ON account_type.id = account.account_type_id
+	WHERE client.id = param_client_id;
 END$$
 DELIMITER ;
 
