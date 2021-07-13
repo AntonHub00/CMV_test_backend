@@ -26,4 +26,6 @@ cmvDB.getClientAccounts = (valuesArray) => executeQuery('CALL USPGetClientAccoun
 
 cmvDB.deleteClient = (valuesArray) => executeQuery('CALL USPDeleteClient(?)', valuesArray)
 
+cmvDB.updateClient = (valuesArray) => executeQuery('CALL USPUpdateClient(?, ?, ?, ?, ?, ?)', valuesArray)
+
 module.exports = cmvDB

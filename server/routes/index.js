@@ -32,4 +32,23 @@ router.delete('/delete-client/:clientId', async (req, res, _next) => {
 	}
 })
 
+router.put('/update-client', async (req, res, _next) => {
+	try {
+		const payload = [
+			req.body.clientId,
+			req.body.firstName,
+			req.body.firstLastName,
+			req.body.secondLastName,
+			req.body.rfc,
+			req.body.curp,
+		]
+
+		const result = await db.updateClient(payload)
+		res.json(result[0])
+	} catch (error) {
+		console.log(error);
+		res.sendStatus(500)
+	}
+})
+
 module.exports = router
