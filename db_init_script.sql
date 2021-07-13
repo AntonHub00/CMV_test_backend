@@ -131,7 +131,6 @@ USPUC: BEGIN
 
 	-- Do nothing if the client doesn't exist.
 	IF (local_client_id = -1) THEN
-		SELECT false;
 		LEAVE USPUC;
 	END IF;
 
@@ -153,7 +152,5 @@ USPUC: BEGIN
 		rfc = local_rfc,
 		curp = local_curp
 	WHERE id = param_client_id;
-
-	SELECT true;
 END$$
 DELIMITER ;
