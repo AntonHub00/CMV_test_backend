@@ -2,10 +2,15 @@
 
 ## Requirements
 
-MySQL version: 8.0.25.
-Node.js: version 14.17.3.
+- MySQL version: 8.0.25.
+- Node.js version: 14.17.3.
 
 ## Setup
+
+**General notes**:
+
+- I assume you are working in a Unix-like system.
+- All the shell commands should be executed in the root of the project.
 
 ### Database
 
@@ -13,6 +18,9 @@ Node.js: version 14.17.3.
 
 **Note**: This should be use only in a development environment. For production
 use, set proper security configurations (password, permissions, etc.).
+
+To execute the following commands log into MySQL with a user with proper
+permissions.
 
 Create a user:
 
@@ -37,17 +45,28 @@ FLUSH PRIVILEGES;
 **Note**: When executing this script the DB and all its data will be deleted if
 the DB exists.
 
-Login into MySQL:
+Log into MySQL:
 
 ```sh
 mysql -u test -p # Press enter and introduce the password.
 ```
 
-Execute de script:
+Execute the script:
 
 ```sql
--- You should pass the full path to the script.
--- Example: source /path/to/script/db_init_script.sql
-
 source db_init_script.sql
+```
+
+### Backend (ExpressJS)
+
+#### Install the dependencies
+
+```sh
+npm install
+```
+
+#### Run the project in development mode
+
+```sh
+npm run dev
 ```
